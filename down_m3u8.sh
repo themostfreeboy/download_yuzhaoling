@@ -30,8 +30,7 @@ function down_m3u8() {
     for ((index=${START_INDEX};index<=${END_INDEX};index++)); do
         local m3u8_url=$(head -n 1 ${index}.m3u8_url)
         echo "[$(date +'%Y-%m-%d %H:%M:%S')] down_m3u8, index=${index}, m3u8_url=${m3u8_url}"
-        rm -vf ${index}.mp4
-        ffmpeg -nostdin -i ${m3u8_url} -codec copy -acodec copy -vcodec copy -threads ${THREAD_NUM} -preset ultrafast ${index}.mp4 &>down_${index}.log &
+        ffmpeg -nostdin -i ${m3u8_url} -codec copy -acodec copy -vcodec copy -threads ${THREAD_NUM} -preset ultrafast -y ${index}.mp4 &>down_${index}.log &
     done
 
     echo "[$(date +'%Y-%m-%d %H:%M:%S')] down_m3u8 downloading......"
