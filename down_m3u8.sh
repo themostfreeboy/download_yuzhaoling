@@ -5,8 +5,8 @@ START_INDEX=1
 # 结束的集数
 END_INDEX=28
 
-# 线程数
-THREAD_NUM=100
+# ffmpeg解码线程数
+THREAD_NUM=4
 
 # 提取m3u8 url
 function get_m3u8_url() {
