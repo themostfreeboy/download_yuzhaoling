@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # 开始的集数
 START_INDEX=1
